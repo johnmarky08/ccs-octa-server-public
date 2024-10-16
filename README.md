@@ -2,7 +2,7 @@
 ***CCS OCTA - Backend Server***
 
 > [!NOTE]
-> See [Changelog](https://github.com/johnmarky08/ccs-octa-server/blob/main/CHANGELOG.md).
+> See [Changelog](CHANGELOG.md).
 
 <hr>
 
