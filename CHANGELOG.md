@@ -6,6 +6,7 @@
 - Improved `middlewares`.
 - Added `/404` for handling path errors.
 - Improved `CRUD methods`.
+- Improved `README.md`.
 
 ## v1.0.9
 

@@ -12,6 +12,11 @@
 # Contents
 - [Environments](#environments-case-sensitive)
 - [User/Officer Roles](#user-roles)
+  - [Everyone](#0---everyone)
+  - [Super Admin](#1---super-admin)
+  - [Administrator](#2---administrator)
+  - [Trainor](#3---trainor)
+  - [Publication](#4---publication)
 - [Routes](#routes)
   - [SSO Routes](#sso-routes)
     - [Google Login](#google-login)
@@ -71,9 +76,7 @@
 | **JWT_SECRET** | JWT Secret |
 
 # User Roles
-```js
-0 - Everyone
-```
+## 0 - Everyone
 ```json
 {
   "canManageFreedomWallPosts": false,
@@ -85,12 +88,7 @@
   "canManageUsers": false
 }
 ```
-
-<hr>
-
-```js
-1 - Super Admin
-```
+## 1 - Super Admin
 ```json
 {
   "canManageFreedomWallPosts": true,
@@ -102,12 +100,7 @@
   "canManageUsers": true
 }
 ```
-
-<hr>
-
-```js
-2 - Administrator
-```
+## 2 - Administrator
 ```json
 {
   "canManageFreedomWallPosts": true,
@@ -119,12 +112,7 @@
   "canManageUsers": false
 }
 ```
-
-<hr>
-
-```js
-3 - Trainor
-```
+## 3 - Trainor
 ```json
 {
   "canManageFreedomWallPosts": true,
@@ -136,12 +124,7 @@
   "canManageUsers": false
 }
 ```
-
-<hr>
-
-```js
-4 - Publication
-```
+## 4 - Publication
 ```json
 {
   "canManageFreedomWallPosts": true,
@@ -173,6 +156,8 @@ GET /api/auth/login
 Or
 <kbd><img src="assets/dashboard-page.png" alt="dashboard" width="1000px"/></kbd>
 
+<hr>
+
 ### Google Logout
 Log out a user
 
@@ -183,6 +168,8 @@ GET /api/auth/logout
 
 #### Google Logout Response
 <kbd><img src="assets/login-page.png" alt="login" width="1000px"/></kbd>
+
+<hr>
 
 ### Google Callback
 Login/Signup with google
@@ -195,6 +182,7 @@ GET /api/auth/google
 #### Google Callback Response
 <kbd><img src="assets/google-auth.png" alt="google" width="1000px"/></kbd>
 
+<hr>
 
 ## Officer Routes
 
@@ -225,6 +213,8 @@ POST /api/officer/?email=&role=
   "email_address": "0000-9999@lspu.edu.ph"
 }
 ```
+
+<hr>
 
 ### Retrieve Officer
 Get someone's role permissions through email
@@ -258,6 +248,8 @@ GET /api/officer/?email=
 }
 ```
 
+<hr>
+
 ### Update Officer
 Change an officers role through email
 
@@ -285,6 +277,8 @@ PATCH /api/officer/?email=&role=
   "email_address": "0000-9999@lspu.edu.ph"
 }
 ```
+
+<hr>
 
 ### Delete Officer
 Remove a user to officers through email
@@ -315,6 +309,8 @@ or
 ```js
 204 No Content
 ```
+
+<hr>
 
 ## Freedom Wall Post Routes
 
@@ -368,6 +364,8 @@ POST /api/freedomwall/
   }
 }
 ```
+
+<hr>
 
 ### Retrieve Freedom Wall Posts
 Get all freedom wall posts
@@ -428,6 +426,8 @@ GET /api/freedomwall/
 ]
 ```
 
+<hr>
+
 ### Retrieve Freedom Wall Post
 Get a specific freedom wall post
 
@@ -468,6 +468,8 @@ GET /api/freedomwall/:id
 }
 ```
 
+<hr>
+
 ### Update Freedom Wall Post
 Approve post/s by ID
 
@@ -502,7 +504,7 @@ PATCH /api/freedomwall/
     "id": 1,
     "ToWhom": "Dev",
     "Message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non gravida enim. In quis porttitor.",
-    "IsApproved": 0,
+    "IsApproved": 1,
     "IsSpam": 0,
     "TimeStamp": "0000-00-00T00:00:00.000Z",
     "Tags": [
@@ -519,7 +521,7 @@ PATCH /api/freedomwall/
     "id": 2,
     "ToWhom": "User",
     "Message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non gravida enim. In quis porttitor.",
-    "IsApproved": 0,
+    "IsApproved": 1,
     "IsSpam": 0,
     "TimeStamp": "0000-00-00T00:00:00.000Z",
     "Tags": [
@@ -534,6 +536,8 @@ PATCH /api/freedomwall/
   }
 ]
 ```
+
+<hr>
 
 ### Delete Freedom Wall Post
 Delete post/s by ID
@@ -572,3 +576,5 @@ or
 ```js
 204 No Content
 ```
+
+<hr>
